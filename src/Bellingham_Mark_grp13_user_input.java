@@ -59,6 +59,6 @@ public class Bellingham_Mark_grp13_user_input {
 					System.out.println();
 					sc.nextLine();
 				}
-			}while(choice >= 1 || choice <= 3);
+			}while(choice > 0 || choice < 4);
 		}
 	}
