@@ -18,8 +18,9 @@ public class Bellingham_Mark_grp13_user_input {
 				System.out.println("Press 3 to quit");
 				
 				choice = sc.nextInt();
-
-				if(choice == 1){
+				
+				switch(choice){
+				case 1:
 					//Gets input from the user
 					System.out.println("Please input your sentence");
 					String input = sc1.nextLine();
@@ -30,28 +31,31 @@ public class Bellingham_Mark_grp13_user_input {
 					//Prints the output
 					Bellingham_Mark_grp13_FreqCalc.print();
 					System.out.println();
-				}
+					break;
 
-				else if(choice == 2){
+				case 2:
 					//Sends the file to the frequency method and prints the output
 					Bellingham_Mark_grp13_FreqCalc.fileFrequency();
 					System.out.println();
-				}
-				
-				else if(choice < 1 || choice > 3){
-					//Error if the user types an integer which is not 1, 2 or 3
-					System.out.println("Number must be 1, 2 or 3");
-					System.out.println();
-				}
-				
-				else if(choice == 3){
+					break;
+					
+				case 3:
 					//Quits the program
 					System.out.println();
 					System.out.println("Thanks for using the text analyser");
 					sc.close();sc1.close();//close the scanners
 					break;
+				
+				default:
+					if(choice < 1 || choice > 3){
+					//Error if the user types an integer which is not 1, 2 or 3
+					System.out.println("Number must be 1, 2 or 3");
+					System.out.println();
 					}
+					break;
+				
 				}
+			}
 				catch(InputMismatchException e){
 					/*Error if the user types a letter or other character
 					or if they type a fractional number*/
@@ -59,6 +63,6 @@ public class Bellingham_Mark_grp13_user_input {
 					System.out.println();
 					sc.nextLine();
 				}
-			}while(choice > 0 || choice < 4);
+			}while(choice >= 0 && choice < 3);
 		}
 	}
